@@ -1,0 +1,85 @@
+// doc on database  link = https://dbdocs.io/nk262487/BackEnd-Inventory?view=table_structure
+// app link: https://dbdiagram.io/d/648f472302bd1c4a5eac2e9e
+Table users {
+  id integer [primary key, increment]
+  firstName varchar(255) [not null]
+  lastName varchar(255) [not null]
+  email varchar(255) [not null]
+  password varchar(255) [not null]
+  token varchar(255)
+}
+
+Table products {
+  id integer [primary key, increment]
+  name varchar(255) [not null]
+  description text
+  price decimal(10, 2) [not null]
+  categoryID integer [ref: > categories.id]
+}
+
+Table categories {
+  id integer [primary key, increment]
+  name varchar(255) [not null]
+}
+
+Table warehouses {
+  id integer [primary key, increment]
+  name varchar(255) [not null]
+  location varchar(255) [not null]
+}
+
+Table suppliers {
+  id integer [primary key, increment]
+  name varchar(255) [not null]
+  contactInfo varchar(255)
+}
+
+Table orders {
+  id integer [primary key, increment]
+  orderDate datetime [not null]
+  supplierID integer [ref: > suppliers.id]
+}
+
+Table orderDetails {
+  id integer [primary key, increment]
+  orderID integer [ref: > orders.id]
+  productID integer [ref: > products.id]
+  quantity integer [not null]
+  unitPrice decimal(10, 2) [not null]
+}
+
+Table customers {
+  id integer [primary key, increment]
+  name varchar(255) [not null]
+  contactInfo varchar(255)
+}
+
+Table employees {
+  id integer [primary key, increment]
+  name varchar(255) [not null]
+  role varchar(255)
+  salary decimal(10, 2) [not null]
+}
+
+Table sales {
+  id integer [primary key, increment]
+  customerID integer [ref: > customers.id]
+  employeeID integer [ref: > employees.id]
+  saleDate datetime [not null]
+  totalAmount decimal(10, 2) [not null]
+}
+
+Table saleDetails {
+  id integer [primary key, increment]
+  saleID integer [ref: > sales.id]
+  productID integer [ref: > products.id]
+  quantity integer [not null]
+  unitPrice decimal(10, 2) [not null]
+}
+
+Table productWarehouses {
+  productID integer [ref: > products.id, primary key]
+  warehouseID integer [ref: > warehouses.id, primary key]
+  quantity integer [not null]
+}
+

@@ -3,18 +3,18 @@ import { WarehouseController } from "../controllers/warehousesControllers";
 const warehouseRouter:express.Router = express.Router();
 
 
-warehouseRouter.post('/movies', WarehouseController.createWarehouse);
+warehouseRouter.post('/warehouse', WarehouseController.createWarehouse);
 
-warehouseRouter.get('/movies',  WarehouseController.getAllWarehouses)
-
-
-warehouseRouter.get('/movies/:id',WarehouseController.getWarehouseById)
+warehouseRouter.get('/warehouse',  WarehouseController.getAllWarehouses)
 
 
-warehouseRouter.put('/movies/:id',WarehouseController.updateWarehouse)
+warehouseRouter.get('/warehouse/:id',WarehouseController.getWarehouseById)
 
 
-warehouseRouter.delete('/movies/:id',WarehouseController.deleteWarehouse)
+warehouseRouter.put('/warehouse/:id',WarehouseController.updateWarehouse)
+
+
+warehouseRouter.delete('/warehouse/:id',WarehouseController.deleteWarehouse)
 
 
 

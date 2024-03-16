@@ -6,6 +6,7 @@ export class WarehouseController {
     // Create Warehouse
     public static createWarehouse = async (req: express.Request, res: express.Response) => {
         try {
+            // console.log(req.body)
             const { warehouseName, location } = req.body;
             if (!warehouseName || !location) {
                 return res.status(400).json({ message: 'Warehouse name and location are required' });
