@@ -12,11 +12,13 @@ import employeeRouter from "./employeeEndpoints";
 import saleRouter from "./salesEndPoints";
 import saleDetailRouter from "./salesDetailsEndpoints";
 import productWarehouseRouter from "./productwarehousesEndPoints";
+import products from "./productEndPoints"
 
 const router: express.Router = express.Router()
 
 router.use('/', userRoute)
-router.use('/',movieRouter)
+router.use('/', products)
+// router.use('/',movieRouter)
 router.use('/', categoryRouter);
 router.use('/', warehouseRouter);
 router.use('/', supplierRouter);
