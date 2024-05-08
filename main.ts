@@ -1,3 +1,4 @@
-const App = require('./core/index');
-const app = new App()
-app.start()
+const App = require('./core/index').default;
+
+const app = new App();
+app.start();
