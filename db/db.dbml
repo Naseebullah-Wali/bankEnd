@@ -1,5 +1,8 @@
 // doc on database  link = https://dbdocs.io/nk262487/BackEnd-Inventory?view=table_structure
 // app link: https://dbdiagram.io/d/648f472302bd1c4a5eac2e9e
+
+// newer version https://dbdiagram.io/d/Inventory-DataBase-Design-6611f1d703593b6b615da3e5
+
 Table users {
   id integer [primary key, increment]
   firstName varchar(255) [not null]
