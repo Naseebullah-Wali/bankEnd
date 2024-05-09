@@ -1,11 +1,24 @@
-import express from 'express'
-import { Server,createServer } from 'http';
-import {Sequelize} from 'sequelize';
-import router from '../router/index'
+const express = require('express');
 
+// Importing Server and createServer using require syntax
+const { Server } = require('http');
+const createServer = require('http').createServer;
+
+// Importing Sequelize using require syntax
+const Sequelize = require('sequelize');
+
+// Importing router using require syntax
+const router = require('../router/index.ts');
+
+// Using require syntax for cookieParser and cors
 const cookieParser = require('cookie-parser');
-import sequelize from '../db/dbConfig';
 const cors = require('cors');
+
+// Importing sequelize using require syntax
+const sequelize = require('../db/dbConfig.ts');
+
+
+
 
 
 
